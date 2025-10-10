@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>七大戦 むしゃどん杯</title>
+    <title>第5回 むしゃどん杯</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & Noto Sans JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
@@ -38,13 +38,13 @@
 </head>
 <body class="antialiased">
 
-    <!-- 背景の装飾 -->
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div class="absolute top-[-20%] left-[-10%] w-96 h-96 bg-indigo-600 rounded-full opacity-30 filter blur-3xl"></div>
-        <div class="absolute bottom-[-20%] right-[-10%] w-96 h-96 bg-pink-600 rounded-full opacity-30 filter blur-3xl"></div>
+    <!-- 背景の装飾: position: absolute -> fixed に変更 -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div class="absolute top-[-20%] left-[-10%] w-96 h-96 bg-indigo-600 rounded-full opacity-30 filter blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-96 h-96 bg-pink-600 rounded-full opacity-30 filter blur-3xl animate-pulse"></div>
     </div>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative z-10">
         
         <!-- ヘッダー -->
         <header class="text-center mb-16">
@@ -87,7 +87,7 @@
             <section id="rules-summary" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                  <div class="card rounded-2xl p-6">
                     <h3 class="text-2xl font-bold mb-2">参加チーム</h3>
-                    <p class="text-gray-300">各大学のメンバーをパワーや武器、などを元にむしゃどんがチーム分けします。</p>
+                    <p class="text-gray-300">各大学のメンバーをごちゃ混ぜにしてむしゃどんがチーム分けします。</p>
                 </div>
                  <div class="card rounded-2xl p-6">
                     <h3 class="text-2xl font-bold mb-2">XP制限</h3>
@@ -108,15 +108,15 @@
                         <ul class="list-disc list-inside space-y-2 text-gray-300 pl-2">
                             <li>チーム集合後に以下の2パターンの編成を準備してください
                                 <ul class="list-['-_'] list-inside ml-6">
-                                    <li>コスト18編成</li>
-                                    <li>コスト22編成</li>
+                                    <li>コスト18以下編成</li>
+                                    <li>コスト22以下編成</li>
                                 </ul>
                             </li>
                             <li>同じ対戦相手に同系統の武器（例：スシ→スシコラ・スシ煌）は再使用不可</li>
                             <li>上位2人のコスト合計の上限：
                                  <ul class="list-['-_'] list-inside ml-6">
-                                    <li><span class="font-bold">コスト18時：</span>合計9以下</li>
-                                    <li><span class="font-bold">コスト22時：</span>合計11以下</li>
+                                    <li><span class="font-bold">コスト18の場合：</span>合計9以下</li>
+                                    <li><span class="font-bold">コスト22の場合：</span>合計11以下</li>
                                 </ul>
                             </li>
                             <li>上位2人のうち片方が2試合連続でコスト8以上の武器を使うことは禁止</li>
@@ -136,7 +136,7 @@
             <!-- 参加申請 -->
             <section id="application" class="card rounded-2xl p-6 md:p-8">
                 <h2 class="text-3xl font-bold mb-6 section-title">参加申請</h2>
-                <div class="space-y-4">
+                <div class="space-y-6">
                     <p>申請者の手続きは以下のエントリーフォームのみとなります。</p>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNLRoo7Q0rZbAHn2i_w-G6WEqXACZslUqBWUpvZc891mPQ7A/viewform?usp=dialog" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg">
                         エントリーフォームはこちら
@@ -158,6 +158,8 @@
                     <div>
                         <h3 class="font-bold text-lg">参加辞退</h3>
                         <p>DM等で別途辞退するプレイヤーの名前をご連絡ください。</p>
+                        <a href="https://x.com/mushadon_game"class="text-indigo-400 hover:text-indigo-300 underline">DMはこちら</a>
+
                     </div>
                 </div>
             </section>
@@ -210,11 +212,11 @@
                     <div>
                         <h3 class="text-xl font-bold mb-2">設定ミス</h3>
                          <ul class="list-disc list-inside space-y-2 text-gray-300">
-                            <li><span class="font-semibold">発覚タイミング問わず：</span>無効試合とし、再戦。</li>
+                            <li><span class="font-semibold">１回目発覚タイミング問わず：</span>無効試合とし、再戦。</li>
                             <li><span class="font-semibold">ルールミス：</span>再試合は同ステージ、ギア・ブキ変更<span class="font-bold text-red-400">不可能</span>。</li>
                              <li><span class="font-semibold">ステージミス：</span>再試合は正ステージ、ギア・ブキ変更<span class="font-bold text-green-400">可能</span>。</li>
                              <li><span class="font-semibold">コストミス：</span>再試合は同ステージ、ギア・ブキ変更<span class="font-bold text-green-400">可能</span>。</li>
-                            <li><span class="font-semibold">同チームで2回ミス：</span>誤った側の1敗。</li>
+                            <li><span class="font-semibold">２回目同じチームのミス：</span>誤った側の1敗。</li>
                         </ul>
                     </div>
                 </div>
@@ -249,3 +251,4 @@
     </div>
 </body>
 </html>
+
