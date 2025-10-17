@@ -1,27 +1,44 @@
+はい、承知いたしました。
+元のHTMLコードはTailwind CSSのレスポンシブデザインの仕組みが活用されており、既にスマートフォンでの表示にある程度対応していました。
+
+そこからさらに、**文字の大きさと余白をスマートフォンの小さな画面に最適化**し、より見やすくなるように調整を加えました。
+
+### 主な変更点
+
+  * **見出しの調整**: スマートフォンで見たときに、タイトルや各セクションの見出しが大きすぎないようにサイズを調整しました。
+  * **余白の最適化**: セクション間の余白を少し狭め、スクロールがよりスムーズになるようにしました。
+  * **テキストサイズの微調整**: 日時などの一部のテキストを、画面幅に合わせて読みやすいサイズに変更しました。
+
+これらの変更により、PCなどの大きな画面でのデザインは維持しつつ、スマートフォンでの可読性を向上させています。
+
+-----
+
+### 修正後のHTMLコード
+
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>むしゃどん杯 | XP別コミュニティ大会</title>
+    <title>むしゃどん杯 | ブキコスト制大会</title>
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mushadon.github.io/mushadoncup/">
-    <meta property="og:title" content="むしゃどん杯 | XP別コミュニティ大会">
-    <meta property="og:description" content="七大学間の垣根を越えたスプラトゥーン3コミュニティ大会！独自の武器コスト制ルールを採用し開催。エントリーはこちら！">
-    <meta property="og:image" content="https://github.com/mushadon/mushadoncup/raw/main/ogp-image.png">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:title" content="むしゃどん杯 | ブキコスト制大会">
+    <meta property="og:description" content="七大学間の垣根を越えたスプラトゥーン3コミュニティ大会！独自のブキコスト制ルールを採用し開催。エントリー受付中！">
+    <meta property="og:image" content="https://mushadon.github.io/mushadoncup/ogp-image2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://mushadon.github.io/mushadoncup/">
-    <meta name="twitter:title" content="むしゃどん杯 | XP別コミュニティ大会">
-    <meta name="twitter:description" content="七大学間の垣根を越えたスプラトゥーン3コミュニティ大会！独自の武器コスト制ルールを採用し開催。エントリーはこちら！">
-    <meta name="twitter:image" content="https://github.com/mushadon/mushadoncup/raw/main/ogp-image.png">
+    <meta name="twitter:title" content="むしゃどん杯 | ブキコスト制大会">
+    <meta name="twitter:description" content="七大学間の垣根を越えたスプラトゥーン3コミュニティ大会！独自のブキコスト制ルールを採用し開催。エントリー受付中！">
+    <meta name="twitter:image" content="https://mushadon.github.io/mushadoncup/ogp-image2.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
@@ -61,8 +78,8 @@
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative z-10">
         
-        <header class="text-center mb-16">
-            <h1 class="text-5xl md:text-7xl font-black tracking-tight gradient-text mb-4">
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight gradient-text mb-4">
                 むしゃどん杯
             </h1>
             <p class="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -70,20 +87,21 @@
             </p>
         </header>
 
-        <main class="space-y-12">
+        <main class="space-y-8 md:space-y-12">
 
             <section id="intro" class="card rounded-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold mb-6 section-title">はじめに</h2>
-                <div class="space-y-4 text-gray-300">
-                    <p>むしゃどん杯とはTonepaints所属のむしゃどんによるコミュニティ大会です。今まで、東北大学Tonepaints内での交流を図って行われてきました。</p>
-                    <p>今回はイカ七大戦の協力のもと、参加対象を旧帝大7校まで広げ、2つの部門XPに分けて開催させていただきます。今回はXPの極端に高い大学メンバーがいることから、上位部門と下位部門に分けることへと決定しました。</p>
-                    <p>今後も参加人数等の状況などを考慮しつつルールを調整する予定です。皆様にお楽しみいただける最高の大会を目指してむしゃどんは努力しておりますので、交流や一風変わった対戦をお楽しみいただけると幸いです。</p>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 section-title">はじめに</h2>
+                <div class="space-y-4 text-gray-300"><p>むしゃどん杯とはTonepaints所属のむしゃどんによるコミュニティ大会です。これまで主に東北大学Tonepaints内の交流を目的に実施してきました。</p>
+<p>第5回となる今回は、イカ七大戦の協力のもと参加対象を旧帝大7校まで拡大し、開催します。「幅広いXPの参加者が楽しんで活躍してほしい」という思いで上位XP部門/下位XP部門の2部門制を採用しています。</p>
+<p>また、本大会の当日の連絡及び運用は、旧帝国大学のスプラトゥーンコミュニティである「イカ七大戦（Discord）」内の特設チャンネルで行います。</p>
+<p><strong>注記：</strong>本企画はむしゃどんによる個人主催のコミュニティイベントであり、イカ七大戦運営による公式大会ではありません。会場（Discordサーバー）提供・運営サポートのみご協力いただいています。</p>
+<p>今後も参加人数や運営状況を踏まえ、より多くの方に楽しんでいただけるようルールの最適化を継続します。ご了承ください。交流と一風変わった対戦体験を、どうぞお楽しみください。</p>
                     <p class="text-right font-semibold">むしゃどん</p>
                 </div>
             </section>
 
             <section id="about-ika7" class="card rounded-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold mb-6 section-title">イカ七大戦について</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 section-title">イカ七大戦について</h2>
                 <div class="space-y-4 text-gray-300">
                     <p>イカ七大戦とは、全国7校の旧帝国大学のスプラトゥーンサークルによる初の交流戦コミュニティで、7サークル間の交流を図って2023年9月に発足しました。様々なルール・レギュレーションのもと、今までに7回のイベントを開催しました。</p>
                     <p class="text-right font-semibold">イカ七大戦</p>
@@ -91,15 +109,15 @@
             </section>
 
             <section id="schedule" class="card rounded-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold mb-6 section-title">開催日時</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 section-title">開催日時</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
                     <div class="bg-gray-800/50 rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-pink-400">下位XP部門</h3>
-                        <p class="text-2xl font-bold mt-2">2025年11月8日（土）<br>20時顔合わせ開始 21時試合開始</p>
+                        <h3 class="text-lg md:text-xl font-bold text-pink-400">下位XP部門</h3>
+                        <p class="text-xl md:text-2xl font-bold mt-2">2025年11月8日（土）<br>20時顔合わせ開始 21時試合開始</p>
                     </div>
                     <div class="bg-gray-800/50 rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-indigo-400">上位XP部門</h3>
-                        <p class="text-2xl font-bold mt-2">2025年11月9日（日）<br>20時顔合わせ開始 21時試合開始</p>
+                        <h3 class="text-lg md:text-xl font-bold text-indigo-400">上位XP部門</h3>
+                        <p class="text-xl md:text-2xl font-bold mt-2">2025年11月9日（日）<br>20時顔合わせ開始 21時試合開始</p>
                     </div>
                 </div>
             </section>
@@ -123,14 +141,14 @@
             </section>
 
             <section id="meeting" class="card rounded-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold mb-6 section-title">顔合わせ</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 section-title">顔合わせ</h2>
                 <ul class="list-disc list-inside text-gray-300">
                     <li>当日20時よりチームメンバーと顔合わせおよび作戦会議を行い、21時より試合開始！</li>
                 </ul>
             </section>
 
             <section id="special-rules" class="card rounded-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold mb-6 section-title">特殊ルール: 武器コスト制</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 section-title">特殊ルール: 武器コスト制</h2>
                 <div class="my-6">
                     <img src="my-image(14).png" alt="スプラトゥーン3の各武器にコストを割り当てた一覧表" class="rounded-lg w-full max-w-4xl mx-auto shadow-lg border-2 border-gray-700">
                 </div>
@@ -144,7 +162,7 @@
                                     <li>コスト22以下編成</li>
                                 </ul>
                             </li>
-                            <li>同じ対戦相手に同系統の武器（例：スシ→スシコラ・スシ煌）は再使用不可</li>
+                            <li>同一マッチで同一人物が同系統の武器（例：スシ→スシコラ・スシ煌）を再使用不可</li>
                             <li>上位2人のコスト合計の上限：
                                 <ul class="list-['-_'] list-inside ml-6">
                                     <li><span class="font-bold">コスト18の場合：</span>合計9以下</li>
@@ -152,6 +170,8 @@
                                 </ul>
                             </li>
                             <li>上位2人のうち片方が第一試合第二試合連続でコストが高い方の武器を使うことは禁止（三試合目に連続するのはOK）</li>
+                           <li><strong class="text-red-400">※コスト超過や使用禁止ブキの使用など、チーム編成ルールに違反した場合は、その試合を1敗とします。</strong></li>
+
                         </ul>
                     </div>
                     <div>
@@ -166,7 +186,7 @@
             </section>
             
             <section id="application" class="card rounded-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold mb-6 section-title">参加申請</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 section-title">参加申請</h2>
                 <div class="space-y-6">
                     <p>申請者の手続きは以下のエントリーフォームのみとなります。</p>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNLRoo7Q0rZbAHn2i_w-G6WEqXACZslUqBWUpvZc891mPQ7A/viewform?usp=dialog" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg">
@@ -195,27 +215,40 @@
             </section>
             
             <section id="format" class="card rounded-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold mb-6 section-title">対戦形式</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 section-title">対戦形式</h2>
                  <div class="space-y-4 text-gray-300">
                     <p>対戦表は『イカリング3』タイカイサポート上でご確認ください。</p>
                     <h3 class="text-xl font-bold pt-4">予選リーグ</h3>
                     <ul class="list-disc list-inside space-y-1">
-                        <li>グループ内総当たり二本先取</li>
+                        <li>グループ内総当たり2本先取</li>
                         <li>グループ内上位2チームが１部トーナメント進出</li>
-                        <li>グループ内下位2チームが２部トーナメント進出</li>
+                        <li>グループ内残りのチームが２部トーナメント進出</li>
                     </ul>
+                     <p class="mt-3 p-3 bg-gray-800/50 rounded-lg text-sm font-bold text-amber-400 border-l-4 border-amber-500">
+                        <strong>【重要】</strong> 予選リーグで2部トーナメント進出となったチームは、運営が新たに作成するタイカイサポートに再登録していただく必要があります。
+                    </p>
                      <h3 class="text-xl font-bold pt-4">本戦トーナメント</h3>
                     <ul class="list-disc list-inside space-y-1">
-                        <li>準決勝・決勝ともに2本先取</li>
+                        <li>1部2部トーナメントどちらも準決勝・決勝まで2本先取</li>
+                         <h3 class="text-xl font-bold pt-4">使用ルール・ステージ</h3>
+                        <li>ガチエリア・おまかせ（ただし、同一マッチで同一ステージの重複選択不可）</li>
                     </ul>
+                </div>
+            </section>
+
+            <section id="prizes" class="card rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 section-title">表彰</h2>
+                <div class="text-gray-300">
+                    <p>今大会では、各部門の<strong class="text-white">1部トーナメント</strong>と<strong class="text-white">2部トーナメント</strong>両方の優勝チームを表彰します。</p>
+                    <p class="mt-2">景品等はありません。ご了承ください。</p>
                 </div>
             </section>
             
             <section id="fine-print" class="card rounded-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold mb-6 section-title">大会細則</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 section-title">大会細則</h2>
                 <div class="space-y-6">
                     <div>
-                        <h3 class="text-xl font-bold mb-2">進行ルール</h3>
+                        <h3 class="text-lg md:text-xl font-bold mb-2">進行ルール</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>運営配信卓の試合は、部屋立ての際「かんせんカメラ」の合流を必ず確認してください。</li>
                             <li>部屋作成後、10分以内に反応がない場合、反応がなかった側の不戦敗（スコア2-0）となります。</li>
@@ -223,34 +256,34 @@
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">禁止事項・ペナルティ</h3>
+                        <h3 class="text-lg md:text-xl font-bold mb-2">禁止事項・ペナルティ</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>ゲーム性を損なう行為、差別的言動、誹謗中傷などが発覚し、運営が悪質と判断した場合、大会失格となります。</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">ギアパワー制限</h3>
+                        <h3 class="text-lg md:text-xl font-bold mb-2">ギアパワー制限</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>「基本ギアパワーのみ」オフ（サブギアあり）</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">回線・ラグ</h3>
+                        <h3 class="text-lg md:text-xl font-bold mb-2">回線・ラグ</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li><span class="font-semibold">試合開始後30秒以内</span>の回線落ちは、同条件で再試合。</li>
                             <li><span class="font-semibold">試合開始後31秒以降</span>の回線落ちは、試合続行（再試合なし）。</li>
-                            <li>ラグは基本対応しません。<span class="text-sm">ご了承の上、「#むしゃどん杯」でつぶやくと後日面白賞が授与されるかも？</span></li>
+                            <li>ラグは基本対応しません。ご了承ください。<span class="text-sm">「#むしゃどん杯」でつぶやくと後日面白賞が授与されるかも？</span></li>
                             <li>意図的なラグが疑われる場合は、動画などを添えて運営に報告してください。</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">設定ミス</h3>
+                        <h3 class="text-lg md:text-xl font-bold mb-2">設定ミス</h3>
                          <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li><span class="font-semibold">ルールミス：</span>再試合は同ステージ、ギア・ブキ変更<span class="font-bold text-red-400">不可能</span>。</li>
                             <li><span class="font-semibold">ステージミス：</span>再試合は正ステージ、ギア・ブキ変更<span class="font-bold text-green-400">可能</span>。</li>
                             <li><span class="font-semibold">１回目発覚タイミング問わず：</span>無効試合とし、再戦。</li>
                             <li><span class="font-semibold">２回目同チームのミスの場合：</span>誤った側の1敗。</li>
-                            <li><span class="font-semibold">コストミスについて：</span>相手のコスト超過に気づいた場合、次の試合開始までに運営スタッフに申告すれば、当該試合を相手の1敗（申告した側の1勝）とします。</li>
+                            <li><span class="font-semibold">チーム編成ミスについて：</span>相手のコスト超過、使用禁止ブキの使用等チーム編成ルール違反に気づいた場合、次の試合開始までに運営スタッフに申告すれば、当該試合を相手の1敗（申告した側の1勝）とします。</li>
                             <li><span class="font-semibold">申告方法：</span>イカ七大戦サーバー「むしゃどん杯スタッフルーム」のボイスチャットにて報告してください。</li>
                         </ul>
                     </div>
@@ -259,10 +292,11 @@
 
             <section id="staff" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="card rounded-2xl p-6">
-                    <h3 class="text-2xl font-bold mb-4">配信（両日）</h3>
+                    <h3 class="text-2xl font-bold mb-4">配信</h3>
                     <div class="space-y-2">
                         <p><span class="font-semibold text-indigo-400">実況：</span>むしゃどん</p>
-                        <p><span class="font-semibold text-pink-400">解説：</span>？？？</p>
+                        <p><span class="font-semibold text-pink-400">解説：</span>ドリーマー・あろたん（予定）</p>
+                        <p class="text-sm text-gray-400 pt-2">※原則として、各部門の<strong class="text-white">2部トーナメント</strong>の試合は配信しません。</p>
                     </div>
                 </div>
                 <div class="card rounded-2xl p-6">
@@ -286,10 +320,11 @@
         </main>
 
         <footer class="text-center mt-16 text-gray-400 text-sm">
-            <p>この大会は任天堂の協賛、提供を受けていない、非公式の個人主催大会です。(参考: <a href="https://www.nintendo.co.jp/tournament_guideline/rules.html" class="underline hover:text-white">任天堂イベントガイドライン</a>)</p>
+            <p>個人主催の大会です。この大会は、任天堂の協賛・提携を受けたものではありません。(参考: <a href="https://www.nintendo.co.jp/tournament_guideline/rules.html" class="underline hover:text-white">コミュニティ大会への出場および観戦に関する規約</a>)</p>
             <p>&copy; 2025 Mushadon Cup. All rights reserved.</p>
         </footer>
         
     </div>
 </body>
 </html>
+```
