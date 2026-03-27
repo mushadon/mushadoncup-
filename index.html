@@ -8,8 +8,8 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="むしゃどん杯 | ブキコスト制大会">
     <meta property="og:description" content="独自のブキコスト制ルールを採用したスプラトゥーン3コミュニティ大会！4月4日開催。">
-    <meta property="og:image" content="https://mushadon.github.io/mushadoncup-for-spring/mushadon%E6%9D%AF%E4%B8%83%E5%A4%A7%E5%AD%A6.jpg">
-    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image" content="https://mushadon.github.io/mushadoncup-for-spring/mushadon杯七大学.jpg">
+    <meta property="og:image:type" content="image/jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -23,9 +23,9 @@
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
+            background-color: #2a2a2a;
             color: #f0f0f0;
             overflow-x: hidden;
-            background-color: #161616;
         }
 
         .bg-fixed {
@@ -35,82 +35,88 @@
             width: 100vw;
             height: 100vh;
             min-height: 100svh;
-            background-image:
-                linear-gradient(rgba(10, 10, 10, 0.45), rgba(10, 10, 10, 0.55)),
-                url("mushadon杯七大学.jpg");
+            background-image: url("mushadon杯七大学.jpg");
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
-            z-index: -3;
+            z-index: -2;
             transform: translateZ(0);
             -webkit-transform: translateZ(0);
         }
 
-        .bg-glow {
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .bg-glow::before,
-        .bg-glow::after {
-            content: "";
-            position: absolute;
-            width: 28rem;
-            height: 28rem;
-            border-radius: 9999px;
-            filter: blur(70px);
-            opacity: 0.22;
-        }
-
-        .bg-glow::before {
-            top: -8rem;
-            left: -5rem;
-            background: #6366f1;
-            animation: floatSlow 8s ease-in-out infinite;
-        }
-
-        .bg-glow::after {
-            right: -5rem;
-            bottom: -8rem;
-            background: #ec4899;
-            animation: floatSlow 10s ease-in-out infinite;
-        }
-
-        @keyframes floatSlow {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            50% { transform: translateY(12px) translateX(-8px); }
-        }
-
-        .glass {
-            background: rgba(20, 20, 24, 0.62);
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
         .card {
-            background: rgba(28, 28, 32, 0.84);
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: rgba(45, 45, 45, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
         }
 
         .gradient-text {
-            background: linear-gradient(90deg, #a5b4fc, #f9a8d4);
+            background: linear-gradient(90deg, #818cf8, #f472b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        .header-bg {
+            background: rgba(0, 0, 0, 0.38);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .footer-bg {
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
         .section-kicker {
             color: #f9a8d4;
-            letter-spacing: 0.28em;
+            letter-spacing: 0.25em;
             font-size: 0.78rem;
             font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .quick-nav a {
+            padding: 10px 14px;
+            border-radius: 9999px;
+            background: rgba(0,0,0,0.35);
+            color: #e5e7eb;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            font-size: 14px;
+            transition: .2s ease;
+        }
+
+        .quick-nav a:hover,
+        .cta-primary:hover,
+        .cta-secondary:hover {
+            transform: translateY(-1px);
+            opacity: 0.95;
+        }
+
+        .cta-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 24px;
         }
 
         .cta-primary,
@@ -119,104 +125,60 @@
             align-items: center;
             justify-content: center;
             min-height: 48px;
-            padding: 0.9rem 1.3rem;
+            padding: 12px 20px;
             border-radius: 9999px;
-            font-weight: 800;
+            font-weight: 700;
             text-decoration: none;
-            transition: transform 0.18s ease, opacity 0.18s ease, box-shadow 0.18s ease;
+            transition: .2s ease;
         }
 
         .cta-primary {
-            color: white;
             background: linear-gradient(90deg, #818cf8, #f472b6);
-            box-shadow: 0 12px 28px rgba(129, 140, 248, 0.25);
+            color: white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
         }
 
         .cta-secondary {
+            background: rgba(0, 0, 0, 0.35);
             color: #f3f4f6;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255,255,255,0.12);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
         }
 
-        .cta-primary:hover,
-        .cta-secondary:hover,
-        .quick-nav a:hover,
-        .faq-item summary:hover {
-            transform: translateY(-1px);
-            opacity: 0.95;
-        }
-
-        .quick-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            justify-content: center;
-        }
-
-        .quick-nav a {
-            padding: 0.7rem 1rem;
-            border-radius: 9999px;
-            text-decoration: none;
-            color: #e5e7eb;
-            background: rgba(0, 0, 0, 0.28);
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-            font-size: 0.95rem;
-            transition: transform 0.18s ease, opacity 0.18s ease;
-        }
-
-        .number-badge {
+        .feature-number {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 3rem;
-            height: 3rem;
+            width: 52px;
+            height: 52px;
             border-radius: 9999px;
             font-weight: 900;
-            background: linear-gradient(135deg, rgba(129, 140, 248, 0.25), rgba(244, 114, 182, 0.25));
-            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: linear-gradient(135deg, rgba(129,140,248,.25), rgba(244,114,182,.25));
+            border: 1px solid rgba(255,255,255,0.1);
             color: #fbcfe8;
         }
 
-        .info-grid > div,
         .summary-box,
         .faq-item {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
         }
 
         .faq-item {
-            border-radius: 1rem;
-            padding: 1rem 1.1rem;
+            border-radius: 14px;
+            padding: 14px 16px;
         }
 
         .faq-item summary {
             cursor: pointer;
             font-weight: 700;
-            list-style: none;
-        }
-
-        .faq-item summary::-webkit-details-marker {
-            display: none;
         }
 
         .faq-item p {
             color: #d1d5db;
-            margin-top: 0.85rem;
+            margin-top: 10px;
             line-height: 1.8;
-        }
-
-        .sticky-entry {
-            position: sticky;
-            bottom: 1rem;
-            z-index: 20;
-        }
-
-        .hero-logo {
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
         }
 
         @media (max-width: 768px) {
@@ -224,62 +186,62 @@
                 background-position: center top;
             }
 
-            .glass,
-            .card {
-                border-radius: 1rem;
+            .header-bg {
+                padding: 16px;
+                border-radius: 12px;
+            }
+
+            .footer-bg {
+                padding: 16px;
+                border-radius: 12px;
+                margin-left: 8px;
+                margin-right: 8px;
             }
 
             .quick-nav {
                 justify-content: flex-start;
                 overflow-x: auto;
-                padding-bottom: 0.25rem;
                 flex-wrap: nowrap;
+                padding-bottom: 4px;
             }
 
             .quick-nav a {
                 white-space: nowrap;
             }
-
-            .sticky-entry {
-                bottom: 0.75rem;
-            }
         }
     </style>
 </head>
 <body class="antialiased">
-
     <div class="bg-fixed"></div>
-    <div class="bg-glow"></div>
 
-    <div class="container mx-auto px-4 py-8 md:py-12 relative z-10 max-w-6xl">
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div class="absolute top-[-20%] left-[-10%] w-96 h-96 bg-indigo-600 rounded-full opacity-30 filter blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-96 h-96 bg-pink-600 rounded-full opacity-30 filter blur-3xl animate-pulse"></div>
+    </div>
+
+    <div class="container mx-auto px-4 py-12 relative z-10 max-w-6xl">
 
         <nav class="quick-nav mb-8">
             <a href="#top">トップ</a>
+            <a href="#schedule">日時</a>
             <a href="#features">特徴</a>
-            <a href="#details">大会概要</a>
-            <a href="#special-rules">コスト制</a>
+            <a href="#special-rules">ルール</a>
             <a href="#fine-print">細則</a>
             <a href="#faq">FAQ</a>
             <a href="#staff">運営</a>
             <a href="#entry">参加方法</a>
         </nav>
 
-        <header id="top" class="glass rounded-3xl p-6 md:p-10 text-center mb-12">
-            <div class="inline-block mb-6">
-                <img src="mushadon杯七大学.jpg" alt="むしゃどん杯ロゴ" class="hero-logo w-40 md:w-56 mx-auto rounded-full border-4 border-white/10">
-            </div>
-
+        <header id="top" class="text-center mb-12 header-bg">
             <p class="section-kicker mb-3">MUSHADON CUP</p>
-            <h1 class="text-5xl md:text-7xl font-black tracking-tight gradient-text mb-4">むしゃどん杯</h1>
-            <p class="text-xl md:text-3xl font-bold text-white mb-4">
-                武器コスト制で、交流も競技性もおいしい大会に
-            </p>
-            <p class="text-gray-200 max-w-3xl mx-auto leading-8 text-sm md:text-base">
+            <h1 class="text-5xl md:text-6xl font-black tracking-tighter gradient-text mb-3">むしゃどん杯</h1>
+            <p class="text-lg md:text-2xl font-bold text-white mb-3">一夜限りのブキコスト制コミュニティ大会</p>
+            <p class="text-gray-300 max-w-2xl mx-auto leading-8">
                 スプラトゥーンが好きな新入生・在学生向けの交流大会。<br>
-                独自のブキコストルールを採用し、チーム編成の面白さと逆転の熱さを両立します。
+                独自の武器コストルールで、カジュアルさと競技性の両立を目指します。
             </p>
 
-            <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <div class="cta-wrap">
                 <a href="#entry" class="cta-primary">参加方法を見る</a>
                 <a href="#special-rules" class="cta-secondary">ルールを見る</a>
                 <a href="#faq" class="cta-secondary">よくある質問</a>
@@ -288,298 +250,247 @@
 
         <main class="space-y-12">
 
-            <section id="schedule" class="card rounded-3xl p-6 md:p-8 border border-pink-400/30">
+            <section id="schedule" class="card rounded-2xl p-6 md:p-8 border-2 border-pink-500/50">
+                <p class="section-kicker mb-2">Schedule</p>
+                <h2 class="text-3xl font-bold mb-6">開催日時</h2>
                 <div class="text-center">
-                    <p class="section-kicker mb-2">SCHEDULE</p>
-                    <h2 class="text-3xl md:text-4xl font-black mb-6">開催日時</h2>
                     <p class="text-4xl md:text-5xl font-black gradient-text">2026年4月4日（土）</p>
-
-                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto text-xl font-bold">
-                        <div class="summary-box rounded-2xl p-5">20:00 集合・顔合わせ</div>
-                        <div class="summary-box rounded-2xl p-5 text-indigo-200">21:00 試合開始</div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-2xl font-bold">
+                        <div class="bg-gray-800/50 p-4 rounded-lg">20:00 集合・顔合わせ</div>
+                        <div class="bg-indigo-900/30 p-4 rounded-lg text-indigo-300">21:00 試合開始</div>
                     </div>
-
                     <p class="mt-5 text-gray-300 leading-7">
-                        スプラが好きな新入生・在学生向けの交流大会です。<br>
-                        初心者も歓迎、個人エントリーなので気軽に参加できます。
+                        個人エントリー形式なので、チームを組んでいなくても参加できます。
                     </p>
                 </div>
             </section>
 
             <section id="features" class="space-y-6">
                 <div class="text-center">
-                    <p class="section-kicker mb-2">FEATURES</p>
+                    <p class="section-kicker mb-2">Features</p>
                     <h2 class="text-3xl md:text-4xl font-black">大会の特徴</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <article class="card rounded-3xl p-6 md:p-7">
-                        <div class="number-badge mb-4">01</div>
+                    <div class="card rounded-2xl p-6">
+                        <div class="feature-number mb-4">01</div>
                         <h3 class="text-2xl font-bold mb-3">独自の武器コスト制</h3>
                         <p class="text-gray-300 leading-8">
-                            ブキごとにコストを設定。強いブキだけを詰め込むのではなく、
-                            チーム全体で編成を考える楽しさがあります。
+                            ブキごとにコストを設定。編成段階から戦略性が生まれます。
                         </p>
-                    </article>
+                    </div>
 
-                    <article class="card rounded-3xl p-6 md:p-7">
-                        <div class="number-badge mb-4">02</div>
-                        <h3 class="text-2xl font-bold mb-3">負け側に救済のある試合設計</h3>
+                    <div class="card rounded-2xl p-6">
+                        <div class="feature-number mb-4">02</div>
+                        <h3 class="text-2xl font-bold mb-3">負け側に逆転チャンス</h3>
                         <p class="text-gray-300 leading-8">
-                            第2試合では、直前の敗北チームのみコスト22が解禁。
-                            一方的な展開になりにくく、逆転の可能性が残ります。
+                            第2試合では敗北チームのみコスト22が解禁され、逆転の余地があります。
                         </p>
-                    </article>
+                    </div>
 
-                    <article class="card rounded-3xl p-6 md:p-7">
-                        <div class="number-badge mb-4">03</div>
-                        <h3 class="text-2xl font-bold mb-3">個人エントリーで参加しやすい</h3>
+                    <div class="card rounded-2xl p-6">
+                        <div class="feature-number mb-4">03</div>
+                        <h3 class="text-2xl font-bold mb-3">個人参加で気軽に出られる</h3>
                         <p class="text-gray-300 leading-8">
-                            チームを組んでいなくても参加可能。
-                            新歓らしく、交流しながら楽しめる大会形式です。
+                            新歓向けなので、交流目的でも参加しやすい形式です。
                         </p>
-                    </article>
+                    </div>
 
-                    <article class="card rounded-3xl p-6 md:p-7">
-                        <div class="number-badge mb-4">04</div>
+                    <div class="card rounded-2xl p-6">
+                        <div class="feature-number mb-4">04</div>
                         <h3 class="text-2xl font-bold mb-3">配信ありで観戦も楽しい</h3>
                         <p class="text-gray-300 leading-8">
-                            実況・解説つきで、大会の雰囲気をみんなで共有。
-                            プレイする人も見る人も楽しめる場を目指します。
+                            実況・解説つきで、プレイヤーも観戦者も大会を楽しめます。
                         </p>
-                    </article>
-                </div>
-            </section>
-
-            <section id="details" class="card rounded-3xl p-6 md:p-8">
-                <div class="text-center mb-8">
-                    <p class="section-kicker mb-2">DETAILS</p>
-                    <h2 class="text-3xl md:text-4xl font-black">大会概要</h2>
-                </div>
-
-                <div class="info-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-100">
-                    <div class="rounded-2xl p-5">
-                        <p class="text-sm text-gray-400 mb-1">開催日</p>
-                        <p class="text-xl font-bold">2026年4月4日（土）</p>
-                    </div>
-                    <div class="rounded-2xl p-5">
-                        <p class="text-sm text-gray-400 mb-1">集合 / 開始</p>
-                        <p class="text-xl font-bold">20:00 / 21:00</p>
-                    </div>
-                    <div class="rounded-2xl p-5">
-                        <p class="text-sm text-gray-400 mb-1">形式</p>
-                        <p class="text-xl font-bold">個人エントリー</p>
-                    </div>
-                    <div class="rounded-2xl p-5">
-                        <p class="text-sm text-gray-400 mb-1">ルール</p>
-                        <p class="text-xl font-bold">ガチヤグラ（おまかせ）</p>
-                    </div>
-                    <div class="rounded-2xl p-5">
-                        <p class="text-sm text-gray-400 mb-1">XP制限</p>
-                        <p class="text-xl font-bold">なし</p>
-                    </div>
-                    <div class="rounded-2xl p-5">
-                        <p class="text-sm text-gray-400 mb-1">試合方式</p>
-                        <p class="text-xl font-bold">2本先取</p>
                     </div>
                 </div>
             </section>
 
-            <section id="special-rules" class="card rounded-3xl p-6 md:p-8">
-                <div class="text-center mb-8">
-                    <p class="section-kicker mb-2">SPECIAL RULES</p>
-                    <h2 class="text-3xl md:text-4xl font-black">特殊ルール：コスト制</h2>
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card rounded-2xl p-6">
+                    <h3 class="text-xl font-bold mb-2">ルール</h3>
+                    <p class="text-gray-300">ガチヤグラ（おまかせ）</p>
                 </div>
+                <div class="card rounded-2xl p-6">
+                    <h3 class="text-xl font-bold mb-2">エントリー</h3>
+                    <p class="text-gray-300">個人エントリー<br><span class="text-sm text-gray-400">（運営によるチーム分け）</span></p>
+                </div>
+                <div class="card rounded-2xl p-6">
+                    <h3 class="text-xl font-bold mb-2">XP制限</h3>
+                    <p class="text-2xl font-black gradient-text">なし！</p>
+                </div>
+            </section>
 
+            <section id="special-rules" class="card rounded-2xl p-6 md:p-8">
+                <p class="section-kicker mb-2">Special Rules</p>
+                <h2 class="text-3xl font-bold mb-6">特殊ルール：コスト制</h2>
                 <div class="my-6">
-                    <img src="my-image(15).png" alt="スプラトゥーン3の各武器にコストを割り当てた一覧表" class="rounded-2xl w-full max-w-4xl mx-auto shadow-lg border border-white/10">
+                    <img src="my-image(15).png" alt="スプラトゥーン3の各武器にコストを割り当てた一覧表" class="rounded-lg w-full max-w-4xl mx-auto shadow-lg border-2 border-gray-700">
                 </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-                    <div class="summary-box rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-4 text-pink-300">編成コスト制限</h3>
+                <div class="space-y-8">
+                    <div class="bg-gray-800/40 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4 text-pink-400">編成コスト制限</h3>
                         <ul class="space-y-4 text-gray-300">
-                            <li class="flex items-start gap-3">
-                                <span class="px-3 py-1 rounded-lg text-sm font-bold bg-pink-500/20 text-pink-200 border border-pink-300/20">18</span>
-                                <div><strong>基本編成：</strong>合計コスト18以下（上位2人の合計が9以下）</div>
+                            <li class="flex items-start">
+                                <span class="bg-pink-600 text-white px-2 py-0.5 rounded text-sm mr-3 mt-1">18</span>
+                                <div><strong>基本編成：</strong> 合計コスト18以下（上位2人の合計が9以下）</div>
                             </li>
-                            <li class="flex items-start gap-3">
-                                <span class="px-3 py-1 rounded-lg text-sm font-bold bg-indigo-500/20 text-indigo-200 border border-indigo-300/20">22</span>
-                                <div><strong>強化編成：</strong>合計コスト22以下（上位2人の合計が11以下）</div>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white px-2 py-0.5 rounded text-sm mr-3 mt-1">22</span>
+                                <div><strong>強化編成：</strong> 合計コスト22以下（上位2人の合計が11以下）</div>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="summary-box rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-4 text-indigo-300">試合の流れ（2本先取）</h3>
-                        <ol class="list-decimal list-inside space-y-3 text-gray-300 leading-8">
-                            <li><strong>第1試合：</strong>コスト18 vs 18</li>
-                            <li><strong>第2試合：</strong>直前の試合の<strong class="text-red-300">敗北チームのみ</strong>コスト22が解禁</li>
-                            <li><strong>第3試合：</strong>1勝1敗の場合、両チームコスト22で決戦</li>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-indigo-400">試合の流れ（2本先取）</h3>
+                        <ol class="list-decimal list-inside space-y-3 text-gray-300 bg-gray-900/50 p-6 rounded-xl">
+                            <li><span class="font-bold">第1試合：</span> コスト18 vs 18</li>
+                            <li><span class="font-bold">第2試合：</span> 直前の試合の<span class="text-red-400 underline">敗北チーム</span>のみコスト22が解禁</li>
+                            <li><span class="font-bold">第3試合：</span> 1勝1敗の場合、両チームコスト22で決戦</li>
                         </ol>
                     </div>
                 </div>
             </section>
 
-            <section class="card rounded-3xl p-6 md:p-8">
-                <div class="text-center mb-8">
-                    <p class="section-kicker mb-2">QUICK SUMMARY</p>
-                    <h2 class="text-3xl md:text-4xl font-black">まずここだけ見ればOK</h2>
-                </div>
-
+            <section class="card rounded-2xl p-6 md:p-8">
+                <p class="section-kicker mb-2">Quick Summary</p>
+                <h2 class="text-3xl font-bold mb-6">まずここだけ見ればOK</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="summary-box rounded-2xl p-5">
+                    <div class="summary-box rounded-xl p-5">
                         <h3 class="font-bold text-lg mb-2">コスト制</h3>
-                        <p class="text-gray-300 leading-7">基本は18、負けた側のみ22が解禁。1勝1敗なら両チーム22で決戦です。</p>
+                        <p class="text-gray-300 leading-7">基本は18、負けた側のみ22が解禁。1勝1敗なら両チーム22です。</p>
                     </div>
-                    <div class="summary-box rounded-2xl p-5">
+                    <div class="summary-box rounded-xl p-5">
                         <h3 class="font-bold text-lg mb-2">個人参加OK</h3>
-                        <p class="text-gray-300 leading-7">チーム未編成でも参加可能。運営によるチーム分けです。</p>
+                        <p class="text-gray-300 leading-7">チームを組んでいなくても参加できます。</p>
                     </div>
-                    <div class="summary-box rounded-2xl p-5">
+                    <div class="summary-box rounded-xl p-5">
                         <h3 class="font-bold text-lg mb-2">トラブル時</h3>
-                        <p class="text-gray-300 leading-7">編成ミスや設定ミスは、次の試合開始前までに運営へ申告してください。</p>
+                        <p class="text-gray-300 leading-7">設定ミスや編成ミスは次の試合開始前までに運営へ申告してください。</p>
                     </div>
                 </div>
             </section>
 
-            <section id="fine-print" class="card rounded-3xl p-6 md:p-8">
-                <div class="text-center mb-8">
-                    <p class="section-kicker mb-2">RULES</p>
-                    <h2 class="text-3xl md:text-4xl font-black">大会細則</h2>
-                </div>
-
+            <section id="fine-print" class="card rounded-2xl p-6 md:p-8">
+                <p class="section-kicker mb-2">Rules</p>
+                <h2 class="text-3xl font-bold mb-6">大会細則</h2>
                 <div class="space-y-6">
-                    <div class="summary-box rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-3">進行ルール</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300 leading-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">進行ルール</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>運営配信卓の試合は、部屋立ての際「かんせんカメラ」の合流を必ず確認してください。</li>
                             <li>部屋作成後、10分以内に反応がない場合、反応がなかった側の不戦敗（スコア2-0）となります。</li>
                             <li>タイカイサポート上で試合結果を両チームリーダーが「確定」することで試合完了となります。</li>
                         </ul>
                     </div>
-
-                    <div class="summary-box rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-3">禁止事項・ペナルティ</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300 leading-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">禁止事項・ペナルティ</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>ゲーム性を損なう行為、差別的言動、誹謗中傷などが発覚し、運営が悪質と判断した場合、大会失格となります。</li>
                         </ul>
                     </div>
-
-                    <div class="summary-box rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-3">ギアパワー制限</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300 leading-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">ギアパワー制限</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li>「基本ギアパワーのみ」オフ（サブギアあり）</li>
                         </ul>
                     </div>
-
-                    <div class="summary-box rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-3">回線・ラグ</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300 leading-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">回線・ラグ</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
                             <li><span class="font-semibold">試合開始後30秒以内</span>の回線落ちは、同条件で再試合。</li>
                             <li><span class="font-semibold">試合開始後31秒以降</span>の回線落ちは、試合続行（再試合なし）。</li>
-                            <li>ラグは基本対応しません。ご了承ください。<span class="text-sm text-gray-400">「#むしゃどん杯」でつぶやくと後日面白賞が授与されるかも？</span></li>
+                            <li>ラグは基本対応しません。ご了承ください。<span class="text-sm">「#むしゃどん杯」でつぶやくと後日面白賞が授与されるかも？</span></li>
                             <li>意図的なラグが疑われる場合は、動画などを添えて運営に報告してください。</li>
                         </ul>
                     </div>
-
-                    <div class="summary-box rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-3">設定ミス</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300 leading-8">
-                            <li><span class="font-semibold">ルールミス：</span>再試合は同ステージ、ギア・ブキ変更<span class="font-bold text-red-300">不可能</span>。</li>
-                            <li><span class="font-semibold">ステージミス：</span>再試合は正ステージ、ギア・ブキ変更<span class="font-bold text-green-300">可能</span>。</li>
-                            <li><span class="font-semibold">1回目発覚タイミング問わず：</span>無効試合とし、再戦。</li>
-                            <li><span class="font-semibold">2回目同チームのミスの場合：</span>誤った側の1敗。</li>
-                            <li><span class="font-semibold">チーム編成ミス：</span>相手のコスト超過、使用禁止ブキの使用等に気づいた場合、次の試合開始までに運営スタッフに申告すれば、当該試合を相手の1敗（申告した側の1勝）とします。</li>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">設定ミス</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li><span class="font-semibold">ルールミス：</span>再試合は同ステージ、ギア・ブキ変更<span class="font-bold text-red-400">不可能</span>。</li>
+                            <li><span class="font-semibold">ステージミス：</span>再試合は正ステージ、ギア・ブキ変更<span class="font-bold text-green-400">可能</span>。</li>
+                            <li><span class="font-semibold">１回目発覚タイミング問わず：</span>無効試合とし、再戦。</li>
+                            <li><span class="font-semibold">２回目同チームのミスの場合：</span>誤った側の1敗。</li>
+                            <li><span class="font-semibold">チーム編成ミスについて：</span>相手のコスト超過、使用禁止ブキの使用等チーム編成ルール違反に気づいた場合、次の試合開始までに運営スタッフに申告すれば、当該試合を相手の1敗（申告した側の1勝）とします。</li>
                             <li><span class="font-semibold">申告方法：</span>スタッフルームのボイスチャットにて報告してください。</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <section id="faq" class="card rounded-3xl p-6 md:p-8">
-                <div class="text-center mb-8">
-                    <p class="section-kicker mb-2">FAQ</p>
-                    <h2 class="text-3xl md:text-4xl font-black">よくある質問</h2>
-                </div>
+            <section id="faq" class="card rounded-2xl p-6 md:p-8">
+                <p class="section-kicker mb-2">FAQ</p>
+                <h2 class="text-3xl font-bold mb-6">よくある質問</h2>
 
                 <div class="space-y-3">
                     <details class="faq-item">
                         <summary>初心者でも参加できますか？</summary>
-                        <p>参加できます。新歓向けの交流大会なので、実力よりも楽しく参加したい人も歓迎です。</p>
+                        <p>参加できます。新歓向けの交流大会なので、気軽な参加も歓迎です。</p>
                     </details>
 
                     <details class="faq-item">
                         <summary>チームを組んでいなくても参加できますか？</summary>
-                        <p>できます。個人エントリー形式で、運営側でチーム分けを行います。</p>
+                        <p>できます。個人エントリー形式で、運営によるチーム分けを行います。</p>
                     </details>
 
                     <details class="faq-item">
                         <summary>回線落ちしたらどうなりますか？</summary>
-                        <p>試合開始後30秒以内なら同条件で再試合、31秒以降は原則として試合続行です。</p>
+                        <p>試合開始後30秒以内なら同条件で再試合、31秒以降は試合続行です。</p>
                     </details>
 
                     <details class="faq-item">
-                        <summary>編成ミスや設定ミスに気づいたら？</summary>
-                        <p>次の試合開始前までに、スタッフルームのボイスチャットで運営へ申告してください。</p>
+                        <summary>設定ミスや編成ミスに気づいたら？</summary>
+                        <p>次の試合開始までに、スタッフルームのボイスチャットで運営に申告してください。</p>
                     </details>
                 </div>
             </section>
 
-            <section id="staff" class="space-y-6">
-                <div class="text-center">
-                    <p class="section-kicker mb-2">STAFF</p>
-                    <h2 class="text-3xl md:text-4xl font-black">配信・運営</h2>
+            <section id="staff" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-4">配信</h3>
+                    <div class="space-y-2">
+                        <p><span class="font-semibold text-indigo-400">実況：</span>むしゃどん</p>
+                        <p><span class="font-semibold text-pink-400">解説：</span>みなづき（予定）</p>
+                        <p class="text-sm text-gray-400 pt-2">※原則として、各部門の<strong class="text-white">2部トーナメント</strong>の試合は配信しません。</p>
+                    </div>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="card rounded-3xl p-6">
-                        <h3 class="text-2xl font-bold mb-4">配信</h3>
-                        <div class="space-y-2 text-gray-300">
-                            <p><span class="font-semibold text-indigo-300">実況：</span>むしゃどん</p>
-                            <p><span class="font-semibold text-pink-300">解説：</span>みなづき（予定）</p>
-                            <p class="text-sm text-gray-400 pt-2">※原則として、各部門の<strong class="text-white">2部トーナメント</strong>の試合は配信しません。</p>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-3xl p-6">
-                        <h3 class="text-2xl font-bold mb-4">運営スタッフ</h3>
-                        <ul class="list-disc list-inside text-gray-300 space-y-1">
-                            <li>むしゃどん</li>
-                            <li>空白</li>
-                        </ul>
-                    </div>
-
-                    <div class="card rounded-3xl p-6">
-                        <h3 class="text-2xl font-bold mb-4">協力</h3>
-                        <ul class="list-disc list-inside text-gray-300 space-y-1">
-                            <li>Tonepaints</li>
-                        </ul>
-                    </div>
+                <div class="card rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-4">運営スタッフ</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>むしゃどん</li>
+                        <li>空白</li>
+                    </ul>
+                </div>
+                <div class="card rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-4">協力</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Tonepaints</li>
+                    </ul>
                 </div>
             </section>
 
-            <section id="entry" class="card rounded-3xl p-6 md:p-8 border border-indigo-400/30">
-                <div class="text-center mb-8">
-                    <p class="section-kicker mb-2">ENTRY</p>
-                    <h2 class="text-3xl md:text-4xl font-black">参加方法</h2>
-                </div>
+            <section id="entry" class="card rounded-2xl p-6 md:p-8 border-2 border-indigo-500/40">
+                <p class="section-kicker mb-2">Entry</p>
+                <h2 class="text-3xl font-bold mb-6">参加方法</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="summary-box rounded-2xl p-5">
+                    <div class="summary-box rounded-xl p-5">
                         <p class="text-sm text-gray-400 mb-2">STEP 1</p>
                         <h3 class="font-bold text-lg mb-2">募集案内を確認</h3>
-                        <p class="text-gray-300 leading-7">Discordの募集チャンネルや案内ポストを確認してください。</p>
+                        <p class="text-gray-300 leading-7">Discordや告知ポストから募集情報を確認してください。</p>
                     </div>
-                    <div class="summary-box rounded-2xl p-5">
+
+                    <div class="summary-box rounded-xl p-5">
                         <p class="text-sm text-gray-400 mb-2">STEP 2</p>
                         <h3 class="font-bold text-lg mb-2">エントリー</h3>
-                        <p class="text-gray-300 leading-7">エントリーフォームまたは指定の方法で参加申請を行ってください。</p>
+                        <p class="text-gray-300 leading-7">フォームまたは指定の方法で参加申請を行ってください。</p>
                     </div>
-                    <div class="summary-box rounded-2xl p-5">
+
+                    <div class="summary-box rounded-xl p-5">
                         <p class="text-sm text-gray-400 mb-2">STEP 3</p>
                         <h3 class="font-bold text-lg mb-2">当日集合</h3>
-                        <p class="text-gray-300 leading-7">大会当日は20:00までに集合・顔合わせに参加してください。</p>
+                        <p class="text-gray-300 leading-7">大会当日は20:00までに集合・顔合わせへ参加してください。</p>
                     </div>
                 </div>
 
@@ -590,22 +501,17 @@
             </section>
         </main>
 
-        <div class="sticky-entry mt-8 md:hidden">
-            <div class="glass rounded-full p-2 max-w-sm mx-auto">
-                <a href="#entry" class="cta-primary w-full">参加方法を見る</a>
-            </div>
-        </div>
-
-        <footer class="glass rounded-3xl p-6 md:p-8 text-center mt-16 text-gray-300 text-sm leading-7">
+        <footer class="text-center mt-16 text-gray-300 text-sm footer-bg leading-7">
             <p>
                 個人主催の大会です。この大会は、任天堂の協賛・提携を受けたものではありません。
-                （参考:
-                <a href="https://www.nintendo.co.jp/tournament_guideline/rules.html" class="underline hover:text-white transition">
+                (参考:
+                <a href="https://www.nintendo.co.jp/tournament_guideline/rules.html" class="underline hover:text-white">
                     コミュニティ大会への出場および観戦に関する規約
-                </a>）
+                </a>)
             </p>
-            <p class="mt-3">&copy; 2026 Mushadon Cup. All rights reserved.</p>
+            <p class="mt-2">&copy; 2026 Mushadon Cup. All rights reserved.</p>
         </footer>
+
     </div>
 </body>
 </html>
