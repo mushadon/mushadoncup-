@@ -151,13 +151,83 @@
             .floating-entry { left: 16px; right: 16px; bottom: 12px; }
             .floating-entry a { width: 100%; }
         }
+                .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 9999px;
+            font-weight: 700;
+            color: #f3f4f6;
+            background: rgba(0, 0, 0, 0.32);
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(6px);
+        }
+
+        .cta-wrap {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .feature-number {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #a5b4fc;
+        }
+
+        .summary-box {
+            background: rgba(17, 24, 39, 0.45);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(6px);
+        }
+
+        .faq-item {
+            background: rgba(17, 24, 39, 0.45);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 16px 18px;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #f9fafb;
+        }
+
+        .faq-item p {
+            margin-top: 12px;
+            color: #d1d5db;
+            line-height: 1.8;
+        }
+
+        .footer-bg {
+            background: rgba(0,0,0,0.32);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(6px);
+            border-radius: 16px;
+            padding: 20px;
+        }
+                @media (max-width: 768px) {
+            .cta-wrap {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-wrap a {
+                width: 100%;
+            }
+        }
     </style>
     
 </head>
-    <div class="floating-entry">
-    <a href="#entry">エントリーはこちら</a>
-</div>
 <body class="antialiased">
+    <div class="floating-entry">
+        <a href="#entry">エントリーはこちら</a>
+    </div>
     <div class="bg-fixed"></div>
 
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
@@ -166,7 +236,8 @@
     </div>
 
     <div class="container mx-auto px-4 py-12 relative z-10 max-w-6xl">
-
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="nav-label">メニューを開く</label>
         <nav class="quick-nav mb-8">
             <a href="#top">トップ</a>
             <a href="#schedule">日時</a>
