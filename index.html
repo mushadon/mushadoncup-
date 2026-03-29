@@ -39,15 +39,23 @@
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--c-bg);
-            background-image: url("田植え.jpg");
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: auto auto;
-            background-attachment: fixed;
             color: var(--c-text);
             line-height: 1.7;
             font-size: 15px;
             overflow-x: hidden;
+        }
+
+        /* iOS含む全環境で背景を固定するレイヤー */
+        #bg-fixed {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background-image: url("田植え.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: var(--c-bg);
+            pointer-events: none;
         }
 
         /* ===== 背景レイヤー（軽量化: blur削減） ===== */
@@ -513,7 +521,10 @@
 </head>
 <body>
 
-    <!-- 背景 -->
+    <!-- 固定背景（iOS Safari対応） -->
+    <div id="bg-fixed" aria-hidden="true"></div>
+
+    <!-- 背景オーブ -->
     <div class="bg-orb bg-orb--indigo" aria-hidden="true"></div>
     <div class="bg-orb bg-orb--pink"   aria-hidden="true"></div>
 
