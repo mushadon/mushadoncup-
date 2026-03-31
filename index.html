@@ -120,7 +120,6 @@
             font-size: 0.9rem;
             font-weight: 700;
             color: #fbcfe8;
-            /* タップしやすいサイズ確保 */
             min-height: 44px;
         }
 
@@ -139,7 +138,7 @@
         }
 
         #nav-toggle:checked ~ .quick-nav {
-            max-height: 320px;
+            max-height: 360px;
             opacity: 1;
             pointer-events: auto;
             margin-bottom: 24px;
@@ -471,6 +470,85 @@
 
         .tag-opt { font-size: 0.72rem; color: var(--c-muted); margin-bottom: 2px; }
 
+        /* ===== 写真賞 ===== */
+        .award-section {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            padding: 24px var(--pad);
+            background: var(--c-surface);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 2px solid rgba(244,114,182,0.45);
+        }
+
+        .award-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(244,114,182,0.10) 0%, transparent 65%),
+                radial-gradient(ellipse at 80% 50%, rgba(129,140,248,0.10) 0%, transparent 65%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .award-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .award-emoji {
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 10px;
+            display: block;
+            filter: drop-shadow(0 0 12px rgba(244,114,182,0.5));
+        }
+
+        .award-prize {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            background: rgba(244,114,182,0.08);
+            border: 1px solid rgba(244,114,182,0.35);
+            border-radius: var(--radius-sm);
+            padding: 14px 20px;
+            margin-top: 14px;
+            font-size: 0.9rem;
+            color: #fce7f3;
+            line-height: 1.7;
+        }
+
+        .award-prize strong {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .award-hashtag-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(129,140,248,0.15);
+            border: 1px solid rgba(129,140,248,0.4);
+            border-radius: 9999px;
+            padding: 6px 16px;
+            font-size: 1rem;
+            font-weight: 900;
+            color: #c7d2fe;
+            margin-bottom: 14px;
+            letter-spacing: 0.02em;
+        }
+
+        .award-desc {
+            font-size: 0.88rem;
+            color: var(--c-muted);
+            line-height: 1.85;
+            margin-bottom: 4px;
+        }
+
         /* ===== フローティングCTA ===== */
         .floating-cta {
             position: fixed;
@@ -510,12 +588,107 @@
         .border-pink { border-color: rgba(244, 114, 182, 0.4) !important; border-width: 2px !important; }
         .border-indigo { border-color: rgba(129, 140, 248, 0.35) !important; border-width: 2px !important; }
 
-        /* ===== PC向け微調整 ===== */
+        /* ===== PC向け ===== */
         @media (min-width: 600px) {
-            .cta-wrap { flex-direction: row; }
+            .cta-wrap { flex-direction: row; justify-content: center; }
             .entry-steps { grid-template-columns: repeat(3, 1fr); }
             .staff-grid { grid-template-columns: repeat(3, 1fr); }
             .header-wrap h1 { font-size: 3.5rem; }
+        }
+
+        @media (min-width: 900px) {
+            :root {
+                --section-gap: 40px;
+                --pad: 32px;
+            }
+
+            body { font-size: 16px; }
+
+            .container {
+                max-width: 1000px;
+                padding: 40px 40px 120px;
+            }
+
+            .nav-label { display: none !important; }
+            .quick-nav {
+                display: flex !important;
+                flex-wrap: wrap;
+                max-height: none !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+                margin-bottom: 32px;
+                gap: 10px;
+                grid-template-columns: none;
+            }
+            .quick-nav a {
+                border-radius: 9999px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                min-height: 40px;
+            }
+
+            .header-wrap { padding: 48px 40px; }
+            .header-wrap h1 { font-size: 5rem; }
+            .header-sub { font-size: 1.2rem; }
+            .header-desc { font-size: 1rem; }
+            .cta-wrap { gap: 14px; }
+            .btn { font-size: 1rem; padding: 14px 28px; }
+
+            .card-pad { padding: 36px 40px; }
+
+            .schedule-date { font-size: 2.8rem; }
+            .schedule-item { font-size: 1.1rem; padding: 20px; }
+
+            .features-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+            .feature-num { font-size: 2rem; }
+            .feature-card h3 { font-size: 1rem; }
+            .feature-card p  { font-size: 0.88rem; }
+
+            .summary-row { gap: 16px; }
+            .summary-card { padding: 20px 16px; }
+            .summary-card h3 { font-size: 1rem; }
+            .summary-card p  { font-size: 0.95rem; }
+
+            .cost-block { padding: 24px; }
+            .cost-item { font-size: 1rem; }
+            .flow-item { font-size: 0.95rem; padding: 14px 0; }
+
+            .rule-block h3 { font-size: 1.1rem; }
+            .rule-block li { font-size: 0.95rem; }
+
+            .faq-item summary { font-size: 1rem; padding: 18px 20px; }
+            .faq-body { font-size: 0.95rem; padding: 16px 20px 18px; }
+
+            .staff-card { padding: 20px; }
+            .staff-card h3 { font-size: 1rem; margin-bottom: 10px; }
+            .staff-card p, .staff-card li { font-size: 0.92rem; }
+
+            .step-card { padding: 20px; gap: 16px; }
+            .step-num { width: 40px; height: 40px; min-width: 40px; font-size: 0.9rem; }
+            .step-content h3 { font-size: 1.05rem; }
+            .step-content p  { font-size: 0.92rem; }
+
+            /* 写真賞PC */
+            .award-section { padding: 40px; }
+            .award-emoji { font-size: 4rem; }
+            .award-desc { font-size: 0.97rem; }
+            .award-prize { font-size: 1rem; padding: 18px 28px; }
+            .award-prize strong { font-size: 1.1rem; }
+
+            .floating-cta {
+                left: auto;
+                right: 32px;
+                bottom: 32px;
+                width: auto;
+            }
+            .floating-cta a {
+                width: auto;
+                padding: 0 32px;
+                font-size: 0.95rem;
+                height: 52px;
+            }
+
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -530,7 +703,7 @@
 
     <!-- フローティングCTA -->
     <div class="floating-cta">
-        <a href="https://forms.gle/MWekkXvjjNWUrjxE6" class="btn btn-primary">☆ 参加する！ ☆</a>
+        <a href="https://forms.gle/MWekkXvjjNWUrjxE6" target="_blank" rel="noopener">☆ エントリーする ☆</a>
     </div>
 
     <div class="container">
@@ -549,6 +722,7 @@
             <a href="#fine-print">細則</a>
             <a href="#faq">FAQ</a>
             <a href="#staff">運営</a>
+            <a href="#award">写真賞</a>
             <a href="#entry">参加方法</a>
         </nav>
 
@@ -755,14 +929,14 @@
                 <div class="staff-card">
                     <h3>配信</h3>
                     <p><span class="text-indigo">実況：</span>むしゃどん</p>
-                    <p style="margin-top:4px;"><span class="text-pink">解説：</span>みなづき（予定）</p>
-                    <p style="margin-top:6px; font-size:0.78rem; color:var(--c-muted);">※2部トーナメントは原則配信しません。</p>
+                    <p style="margin-top:4px;"><span class="text-pink">解説：</span>みなづき</p>
                 </div>
                 <div class="staff-card">
                     <h3>運営スタッフ</h3>
                     <ul>
-                        <li>むしゃどん</li>
-                        <li>空白</li>
+                        <li>企画・運営：むしゃどん</li>
+                        <li>カメラ・配信：空白</li>
+                        <li>サーバー管理：げん</li>
                     </ul>
                 </div>
                 <div class="staff-card" style="grid-column: 1 / -1;">
@@ -774,6 +948,37 @@
             </div>
         </section>
 
+        <!-- ===== 写真賞 ===== -->
+        <section id="award" class="award-section section-gap">
+            <div class="award-inner">
+                <p class="kicker">Photo Award</p>
+                <h2 style="margin-bottom:12px;">📸 写真賞</h2>
+
+                <p class="award-desc">
+                    大会当日、X（Twitter）に投稿してくれたあなたのチームが<br>
+                    特別なプレゼントの対象になるかも！
+                </p>
+
+                <div class="award-hashtag-pill">
+                    # むしゃどん杯
+                </div>
+
+                <p class="award-desc">
+                    上記ハッシュタグをつけてポストしてくれた方のチームの中から、<br>
+                    抽選で <strong style="color:#fff;">1チーム</strong> にプレゼントが当たります！
+                </p>
+
+                <div class="award-prize">
+                    <strong>🎨 チームメンバー4人のイラストを描きます！</strong>
+                    <span style="font-size:0.85rem; color:var(--c-muted);">（姉むしゃどん によるイラスト）</span>
+                </div>
+
+                <p style="margin-top:14px; font-size:0.8rem; color:var(--c-muted);">
+                    ポストは大会当日〜翌日までOK！<br>ぜひ大会終了前後に記念撮影をお願いします！
+                </p>
+            </div>
+        </section>
+
         <!-- ===== エントリー ===== -->
         <section id="entry" class="card card-pad border-indigo section-gap">
             <p class="kicker">Entry</p>
@@ -781,11 +986,11 @@
 
             <div class="entry-steps">
                 <div class="step-card">
-                    <div class="step-num step-num--opt">任意</div>
+                    <div class="step-num step-num--req">必須</div>
                     <div class="step-content">
                         <p class="tag-opt">STEP 1</p>
-                        <h3>参加意志を表明</h3>
-                        <p>Discordの参加スタンプを押してください。</p>
+                        <h3>新歓サーバーに参加！</h3>
+                        <p>Discordの新歓サーバーに参加してください</p>
                     </div>
                 </div>
                 <div class="step-card">
